@@ -1,0 +1,38 @@
+<!--pages/task-creation/task-creation.wxml-->
+<view class="container">
+  <view class="main-content">
+    <view class="input-wrapper">
+      <input name="taskName" class="task-name-input" placeholder="任务名称" placeholder-class="placeholder" bindinput="onNameInput" />
+    </view>
+
+    <view class="task-type-wrapper">
+      <view class="task-type {{taskType === 'countdown' ? 'active' : ''}}" data-type="countdown" bindtap="onTaskTypeChange">倒数</view>
+      <view class="task-type {{taskType === 'timer' ? 'active' : ''}}" data-type="timer" bindtap="onTaskTypeChange">倒计时</view>
+    </view>
+
+    <view class="picker-section">
+      <!-- 念数选择器 -->
+      <picker-view wx:if="{{taskType === 'countdown'}}" class="picker-view" indicator-style="height: 50px;" value="{{countdownPickerValue}}" bindchange="bindCountdownChange">
+        <picker-view-column>
+          <view wx:for="{{countdownValues}}" wx:key="*this" class="picker-item">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+
+      <!-- 计时器选择器 -->
+      <view wx:if="{{taskType === 'timer'}}" class="countdown-picker-wrapper">
+        <picker-view class="picker-view" indicator-style="height: 50px;" value="{{timerPickerValue}}" bindchange="bindTimerChange">
+          <picker-view-column>
+            <view wx:for="{{minutes}}" wx:key="*this" class="picker-item">{{item}} 分</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{seconds}}" wx:key="*this" class="picker-item">{{item}} 秒</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <button class="create-btn" bindtap="createTask">创建任务</button>
+  </view>
+</view>

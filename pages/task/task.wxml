@@ -1,0 +1,22 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="picker-wrapper" wx:if="{{!isCounting}}">
+    <picker-view class="picker-view" indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{numbers}}" wx:key="*this" class="picker-item">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+  <view class="countdown-area" wx:if="{{isCounting}}">
+    <text class="countdown-number">{{currentNumber}}</text>
+  </view>
+
+  <view class="bottom-area" wx:if="{{!isCounting}}">
+    <button class="button" type="primary" bindtap="startCountdown">开始倒计时</button>
+  </view>
+
+  <view class="footer">
+    <text>The Best Countdown</text>
+  </view>
+</view>

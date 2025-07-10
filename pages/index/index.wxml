@@ -1,0 +1,43 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 任务列表 -->
+  <scroll-view scroll-y class="task-list-scroll" bindtouchstart="resetAllDeletes">
+    <view class="task-list">
+      <view wx:for="{{tasks}}" wx:key="id">
+        <movable-area class="movable-area">
+          <movable-view
+            class="movable-view"
+            direction="horizontal"
+            x="{{item.x}}"
+            bindtouchstart="onTouchStart"
+            bindtouchend="onTouchEnd"
+            data-id="{{item.id}}"
+          >
+            <!-- 任务卡片内容 -->
+            <view class="task-card" style="background-color: {{item.color}};" bindtap="goToDynamicTask" data-id="{{item.id}}">
+              <text class="task-name">{{item.name}}</text>
+              <view class="task-arrow">›</view>
+            </view>
+            <!-- 删除按钮 -->
+            <view
+            class="delete-btn"
+            bindtap="deleteTask"
+            data-id="{{item.id}}"
+          >
+            删除
+          </view>
+          </movable-view>
+        </movable-area>
+      </view>
+
+      <view wx:if="{{tasks.length === 0}}" class="empty-state">
+        <text>点击右下角“+”号，开始创建你的第一个任务吧！</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 新建任务悬浮按钮 -->
+  <view class="fab-btn" bindtap="goToCreateTask">
+    <view class="plus-icon"></view>
+  </view>
+</view>

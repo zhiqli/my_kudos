@@ -1,0 +1,13 @@
+<!--pages/countdown/countdown.wxml-->
+<view class="container" style="background-color: {{task.color || '#f4f4f8'}};">
+  <view wx:if="{{task}}" class="content-wrapper">
+    <!-- 统一的显示区域，移除了任务标题 -->
+    <view class="display-area">
+      <text class="display-value">{{displayValue}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{!task}}" class="loading-state">
+    <text>加载中...</text>
+  </view>
+</view>

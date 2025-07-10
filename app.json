@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/achievements/achievements",
+    "pages/task/task",
+    "pages/countdown/countdown",
+    "pages/profile/profile",
+    "pages/task-creation/task-creation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "The Best Countdown",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "任务",
+        "iconPath": "icons/task_icon_unselected.png",
+        "selectedIconPath": "icons/task_icon_selected.png"
+      },
+      {
+        "pagePath": "pages/achievements/achievements",
+        "text": "成就",
+        "iconPath": "icons/trophy_unselected.png",
+        "selectedIconPath": "icons/trophy_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "subpackages": [
+    {
+      "root": "audio_pkg",
+      "name": "audio",
+      "pages": []
+    }
+  ]
+}

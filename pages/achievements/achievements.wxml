@@ -1,0 +1,4 @@
+<!--pages/achievements/achievements.wxml-->
+<view class="container">
+  <text>成就页面</text>
+</view>

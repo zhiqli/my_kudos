@@ -1,0 +1,88 @@
+/* pages/task/task.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+  justify-content: space-between;
+}
+
+/* 滚动选择器容器 */
+.picker-wrapper {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  margin-top: 15vh;
+}
+
+/* 3D效果 - 顶部和底部边框 */
+.picker-wrapper::before,
+.picker-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  transform: scaleY(0.5);
+  z-index: 2;
+}
+
+.picker-wrapper::before {
+  top: 125px; /* (300px / 2) - (50px / 2) */
+}
+
+.picker-wrapper::after {
+  bottom: 125px; /* (300px / 2) - (50px / 2) */
+}
+
+.picker-view {
+  width: 100%;
+  height: 300px;
+}
+
+.picker-item {
+  line-height: 50px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+/* 倒计时显示区域 */
+.countdown-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.countdown-number {
+  font-size: 120rpx;
+  font-weight: bold;
+  color: #007aff;
+}
+
+/* 底部按钮区域 */
+.bottom-area {
+  width: 100%;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.button {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  background-color: #007aff;
+  color: white;
+  border-radius: 50rpx; /* 圆角按钮 */
+}
+
+.footer {
+  padding-bottom: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+}

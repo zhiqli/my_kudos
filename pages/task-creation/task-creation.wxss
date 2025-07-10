@@ -1,0 +1,117 @@
+/* pages/task-creation/task-creation.wxss */
+page {
+  background-color: #f4f4f8;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40rpx;
+  overflow-y: auto; /* Allow content to scroll if needed */
+}
+
+.input-wrapper {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 10rpx 30rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.task-name-input {
+  height: 100rpx;
+  font-size: 36rpx;
+  width: 100%;
+}
+
+.placeholder {
+  color: #bbb;
+}
+
+.section-title {
+  font-size: 30rpx;
+  color: #888;
+  margin-bottom: 20rpx;
+  padding-left: 10rpx;
+}
+
+.task-type-wrapper {
+  display: flex;
+  background-color: #e9e9f0;
+  border-radius: 18rpx;
+  padding: 8rpx;
+  margin-bottom: 40rpx;
+}
+
+.task-type {
+  flex: 1;
+  text-align: center;
+  padding: 18rpx 0;
+  font-size: 30rpx;
+  color: #555;
+  border-radius: 14rpx;
+  transition: all 0.3s ease;
+}
+
+.task-type.active {
+  background-color: #fff;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+
+.picker-section {
+  /* flex: 1; */ /* Removed to allow natural height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40rpx; /* Add some space at the bottom */
+}
+
+.picker-view {
+  width: 100%;
+  height: 300rpx;
+}
+
+.countdown-picker-wrapper {
+  width: 100%;
+}
+
+.picker-item {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 38rpx;
+  color: #333;
+}
+
+.footer {
+  padding: 20rpx 40rpx 40rpx;
+  background-color: #f4f4f8;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-btn {
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  background-color: #6c63ff;
+  color: white;
+  font-size: 36rpx;
+  border-radius: 0; /* 直角样式 */
+  box-shadow: 0 8rpx 20rpx rgba(108, 99, 255, 0.3);
+  transition: background-color 0.3s;
+  margin: 0; /* Remove default margins */
+}
+
+.create-btn:active {
+  background-color: #574fd8;
+}
